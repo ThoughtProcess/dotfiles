@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "Run once before apply..."
 
 apt_package_prereqs=({{ range .packages.apt -}}{{ . | quote }} {{ end -}})
 pip_package_prereqs=({{ range .packages.pip -}}{{ . | quote }} {{ end -}})
@@ -7,7 +6,7 @@ snap_package_prereqs=({{ range .packages.snap -}}{{ . | quote }} {{ end -}})
 
 # Install missing apt packages, if any
 for element in "${apt_package_prereqs[@]}"; do
-  # echo "Checking for apt package $element"
+  echo "Checking for apt package $element"
   if ! dpkg -s $element &>/dev/null; then
     echo "Apt package $element not present and must be installed."
     apt_packages_for_installation+=("$element")
@@ -20,7 +19,7 @@ fi
 
 # Install missing pip packages, if any
 for element in "${pip_package_prereqs[@]}"; do
-  # echo "Checking for pip package $element"
+  echo "Checking for pip package $element"
   if ! pipx list --short | grep ${element} &>/dev/null; then
     echo "Pip package $element not present and must be installed."
     pip_packages_for_installation+=("$element")
@@ -32,7 +31,7 @@ if [[ "${#pip_packages_for_installation[@]}" -gt "0" ]]; then
 fi
 
 for element in "${snap_package_prereqs[@]}"; do
-  # echo "Checking for snap $element"
+  echo "Checking for snap $element"
   if ! snap list | cut -d' ' -f1 | grep "^${element}\$" &>/dev/null; then
     echo "Snap $element not present and must be installed."
     snaps_for_installation+=("$element")

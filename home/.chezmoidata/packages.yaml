@@ -1,0 +1,13 @@
+---
+packages:
+  apt:
+  - 'git'
+  - 'make'
+  - 'pipx'
+  - 'ssh-askpass'
+  - 'tmux'
+  - 'zsh'
+  pip:
+  - 'pre-commit'
+  snap:
+

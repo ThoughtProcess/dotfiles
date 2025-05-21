@@ -6,6 +6,8 @@ packages:
   - 'pipx'
   - 'ssh-askpass'
   - 'tmux'
+  - 'tmux-plugin-manager'
+  - 'xsel'
   - 'zsh'
   pip:
   - 'pre-commit'

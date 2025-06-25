@@ -12,4 +12,5 @@ packages:
   pip:
   - 'pre-commit'
   snap:
+  - 'yq'
 

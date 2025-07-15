@@ -1,9 +1,3 @@
-# Configure BW_SESSION for use by chezmoi
-# We set this above the TMUX setup that way all child sessions have it set.
-if [ "$BW_SESSION" = "" ]; then
-  export BW_SESSION=$(bw unlock --raw)
-fi
-
 # start TMUX automatically
 if [ "$TMUX" = "" ]; then tmux; fi
 

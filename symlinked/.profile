@@ -27,3 +27,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 . "$HOME/.cargo/env"
 
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/peter/.lmstudio/bin"
+# End of LM Studio CLI section
+

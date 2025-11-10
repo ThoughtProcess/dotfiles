@@ -8,3 +8,4 @@ if [[ -n "${PATH//*:\/snap\/bin:*}" ]]; then
     export PATH="$PATH:/snap/bin"
 fi
 
+. "$HOME/.cargo/env"

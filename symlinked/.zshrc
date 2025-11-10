@@ -66,3 +66,8 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$PATH:/home/peter/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+source <(kubectl completion zsh)
+source <(helm completion zsh)
+

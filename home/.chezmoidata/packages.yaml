@@ -8,9 +8,8 @@ packages:
   - 'tmux'
   - 'tmux-plugin-manager'
   - 'xsel'
+  - 'yq'
   - 'zsh'
   pip:
   - 'pre-commit'
-  snap:
-  - 'yq'
 

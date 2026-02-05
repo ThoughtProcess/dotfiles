@@ -30,15 +30,3 @@ if [[ "${#pip_packages_for_installation[@]}" -gt "0" ]]; then
   pipx install ${pip_packages_for_installation[*]}
 fi
 
-for element in "${snap_package_prereqs[@]}"; do
-  echo "Checking for snap $element"
-  if ! snap list | cut -d' ' -f1 | grep "^${element}\$" &>/dev/null; then
-    echo "Snap $element not present and must be installed."
-    snaps_for_installation+=("$element")
-  fi
-done
-
-if [[ "${#snaps_for_installation[@]}" -gt "0" ]]; then
-  snap install ${snaps_for_installation[*]}
-fi
-

@@ -67,7 +67,11 @@ export PATH="$PATH:/home/peter/.lmstudio/bin"
 # End of LM Studio CLI section
 
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-source <(kubectl completion zsh)
-source <(helm completion zsh)
+[[ ! -f /home/linuxbrew/.linuxbrew/bin/brew ]] || eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if [[ -e /usr/bin/kubectl ]]; then
+   source <(kubectl completion zsh)
+fi
+if [[ -e /usr/bin/helm ]]; then
+   source <(helm completion zsh)
+fi
 

@@ -2,7 +2,6 @@
 
 apt_package_prereqs=({{ range .packages.apt -}}{{ . | quote }} {{ end -}})
 pip_package_prereqs=({{ range .packages.pip -}}{{ . | quote }} {{ end -}})
-snap_package_prereqs=({{ range .packages.snap -}}{{ . | quote }} {{ end -}})
 
 # Install missing apt packages, if any
 for element in "${apt_package_prereqs[@]}"; do

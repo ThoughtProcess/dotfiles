@@ -78,3 +78,8 @@ if [[ -e /usr/bin/helm ]]; then
    source <(helm completion zsh)
 fi
 
+
+alias prepcam="sudo modprobe v4l2loopback && pkill gphoto"
+
+alias dslrcam="gphoto2 --stdout autofocusdrive=1 --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4"
+

@@ -1,5 +1,8 @@
-# start TMUX automatically
-if [ "$TMUX" = "" ]; then tmux; fi
+# If terminal is not launched from vscode, start TMUX automatically
+if [[ "$TERM_PROGRAM" != "vscode" ]]; then
+    # tmux attach 2>/dev/null || tmux new-session -d
+    if [ "$TMUX" = "" ]; then tmux; fi
+fi
 
 function zcompile-many() {
   local f
